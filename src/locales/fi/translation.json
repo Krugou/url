@@ -1,0 +1,78 @@
+{
+  "header": {
+    "title": "NeoLink",
+    "tagline": "Lyhennä linkkisi.",
+    "tagline_highlight": "Raa'an nopeasti."
+  },
+  "hero": {
+    "description": "Ei turhaa. Ei seurantaevästeitä. Vain lyhyitä linkkejä, jotka ohjaavat salamannopeasti."
+  },
+  "form": {
+    "label": "Liitä pitkä URL-osoitteesi",
+    "placeholder": "https://esimerkki.fi/jokin/todella/pitka/polku",
+    "submit": "Lyhennä!",
+    "submitting": "Lyhennetään..."
+  },
+  "errors": {
+    "required": "Syötä URL-osoite",
+    "invalid_url": "Syötä kelvollinen URL-osoite (sisällytä https://)",
+    "shorten_failed": "URL-osoitteen lyhentäminen epäonnistui. Yritä uudelleen.",
+    "generic": "Jokin meni pieleen. Yritä uudelleen."
+  },
+  "links": {
+    "title": "Lyhennetyt linkkisi",
+    "copy": "Kopioi lyhyt URL",
+    "open": "Avaa alkuperäinen URL",
+    "copied": "Kopioitu!"
+  },
+  "redirect": {
+    "loading": "Ohjataan uudelleen...",
+    "not_found": "Linkkiä ei löytynyt. Se on saattanut vanhentua tai sitä ei ole koskaan ollut.",
+    "error_title": "Hups!",
+    "go_home": "Etusivulle"
+  },
+  "not_found": {
+    "title": "404",
+    "subtitle": "Sivua ei löytynyt",
+    "description": "Tämä sivu on kadonnut tyhjyyteen. Se on saatettu siirtää, poistaa tai sitä ei ole koskaan ollutkaan.",
+    "go_home": "Vie minut kotiin"
+  },
+  "footer": {
+    "built_with": "Rakennettu",
+    "design": "Neo-Brutalismi",
+    "privacy_settings": "Tietosuoja-asetukset"
+  },
+  "consent": {
+    "headline": "Seuraamme asioita.",
+    "body": "Käytämme Google Analyticsia nähdäksemme, kuinka moni klikkaa outoja linkkejämme. Se auttaa meitä korjaamaan bugeja. Emme myy tietojasi.",
+    "reject_all": "Hylkää kaikki",
+    "accept_essential": "Hyväksy välttämättömät",
+    "accept_all": "Hyväksy kaikki"
+  },
+  "privacy": {
+    "page_title": "Tietosuojakäytäntö",
+    "data_collect_title": "Keräämämme tiedot",
+    "data_collect_body": "Kun käytät NeoLinkiä, saatamme kerätä seuraavia tietoja Google Analyticsin avulla: IP-osoitteesi (anonymisoitu), selaintyyppi ja versio, laitetiedot, vieraillut sivut ja klikkausdata sekä viittauslähde.",
+    "how_use_title": "Miten käytämme tietoja",
+    "how_use_body": "Käytämme analytiikkatietoja ainoastaan: palvelun käytön ymmärtämiseen, virheiden tunnistamiseen ja korjaamiseen, käyttökokemuksen parantamiseen ja palvelun suorituskyvyn seurantaan.",
+    "third_parties_title": "Kolmannet osapuolet",
+    "third_parties_body": "Käytämme seuraavia kolmannen osapuolen palveluja:",
+    "third_parties_ga": "Google Analytics 4 — Anonyymeihin käyttötilastoihin. Googlen tietosuojakäytäntö on voimassa.",
+    "third_parties_firebase": "Firebase (Google) — Tietojen tallennukseen. Firebasen käyttöehdot ovat voimassa.",
+    "your_rights_title": "Oikeutesi",
+    "your_rights_body": "GDPR:n ja sovellettavien tietosuojalakien nojalla sinulla on oikeus: päästä käsiksi henkilötietoihisi, pyytää tietojesi poistamista, peruuttaa suostumuksesi milloin tahansa Tietosuoja-asetukset-painikkeella ja tehdä valitus valvontaviranomaiselle.",
+    "contact_title": "Ota yhteyttä",
+    "contact_body": "Tietosuojaan liittyvissä kysymyksissä ota yhteyttä:",
+    "contact_email": "privacy@example.com",
+    "last_updated": "Viimeksi päivitetty"
+  },
+  "language": {
+    "en": "EN",
+    "fi": "FI"
+  },
+  "toast": {
+    "link_created": "Linkki lyhennetty onnistuneesti!",
+    "link_copied": "Kopioitu leikepöydälle!",
+    "error": "Tapahtui virhe"
+  }
+}

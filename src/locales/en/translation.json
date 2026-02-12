@@ -1,0 +1,78 @@
+{
+  "header": {
+    "title": "NeoLink",
+    "tagline": "Shorten Your Links.",
+    "tagline_highlight": "Brutally Fast."
+  },
+  "hero": {
+    "description": "No fluff. No tracking cookies. Just short links that redirect at lightning speed."
+  },
+  "form": {
+    "label": "Paste your long URL",
+    "placeholder": "https://example.com/some/very/long/path",
+    "submit": "Shorten It!",
+    "submitting": "Shortening..."
+  },
+  "errors": {
+    "required": "Please enter a URL",
+    "invalid_url": "Please enter a valid URL (include https://)",
+    "shorten_failed": "Failed to shorten URL. Please try again.",
+    "generic": "Something went wrong. Please try again."
+  },
+  "links": {
+    "title": "Your Shortened Links",
+    "copy": "Copy short URL",
+    "open": "Open original URL",
+    "copied": "Copied!"
+  },
+  "redirect": {
+    "loading": "Redirecting...",
+    "not_found": "Link not found. It may have expired or never existed.",
+    "error_title": "Oops!",
+    "go_home": "Go Home"
+  },
+  "not_found": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "This page has vanished into the void. It might have been moved, deleted, or never existed in the first place.",
+    "go_home": "Take Me Home"
+  },
+  "footer": {
+    "built_with": "Built with",
+    "design": "Neo-Brutalism",
+    "privacy_settings": "Privacy Settings"
+  },
+  "consent": {
+    "headline": "We track things.",
+    "body": "We use Google Analytics to see how many people click our weird links. It helps us fix bugs. We don't sell your data.",
+    "reject_all": "Reject All",
+    "accept_essential": "Accept Essential",
+    "accept_all": "Accept All"
+  },
+  "privacy": {
+    "page_title": "Privacy Policy",
+    "data_collect_title": "Data We Collect",
+    "data_collect_body": "When you use NeoLink, we may collect the following data through Google Analytics: your IP address (anonymized), browser type and version, device information, pages visited and click data, and referral source.",
+    "how_use_title": "How We Use It",
+    "how_use_body": "We use analytics data exclusively for: understanding how our service is used, identifying and fixing bugs, improving user experience, and monitoring service performance.",
+    "third_parties_title": "Third Parties",
+    "third_parties_body": "We use the following third-party services:",
+    "third_parties_ga": "Google Analytics 4 — For anonymous usage statistics. Google's privacy policy applies.",
+    "third_parties_firebase": "Firebase (Google) — For data storage. Firebase's terms of service apply.",
+    "your_rights_title": "Your Rights",
+    "your_rights_body": "Under GDPR and applicable privacy laws, you have the right to: access your personal data, request deletion of your data, withdraw consent at any time via the Privacy Settings button, and lodge a complaint with a supervisory authority.",
+    "contact_title": "Contact Us",
+    "contact_body": "For privacy-related inquiries, please contact us at:",
+    "contact_email": "privacy@example.com",
+    "last_updated": "Last updated"
+  },
+  "language": {
+    "en": "EN",
+    "fi": "FI"
+  },
+  "toast": {
+    "link_created": "Link shortened successfully!",
+    "link_copied": "Copied to clipboard!",
+    "error": "An error occurred"
+  }
+}

@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Neo-Brutalism Color Palette (Ice Blue variant) */
+  --color-bg-main: #E0E7FF;
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-accent: #FFE66D;
+  --color-text: #18181B;
+
+  /* Semantic Colors */
+  --color-primary-hover: #FF5252;
+  --color-secondary-hover: #3DBDB5;
+  --color-accent-hover: #FFD93D;
+  --color-error: #E53E3E;
+  --color-success: #38A169;
+
+  /* Hard Shadows (Neo-Brutalism) */
+  --shadow-neo: 4px 4px 0px 0px var(--color-text);
+  --shadow-neo-sm: 2px 2px 0px 0px var(--color-text);
+  --shadow-neo-none: 0px 0px 0px 0px var(--color-text);
+
+  /* Typography */
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Public Sans', sans-serif;
+
+  /* Animation */
+  --animate-slide-in: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Focus visible for accessibility — thick dashed outline */
+:focus-visible {
+  outline: 3px dashed var(--color-primary);
+  outline-offset: 2px;
+}
