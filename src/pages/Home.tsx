@@ -88,15 +88,15 @@ export function Home() {
         <meta name="twitter:image" content="/url/og-image.png" />
       </Helmet>
 
-      <main className="mx-auto max-w-3xl px-4 py-12">
+      <main className="w-full max-w-3xl space-y-16 py-12 md:py-24">
         {/* Hero Section */}
-        <section className="mb-12 text-center" aria-labelledby="hero-heading">
-          <h2 id="hero-heading" className="mb-4 font-heading text-5xl leading-tight text-text">
+        <section className="text-center" aria-labelledby="hero-heading">
+          <h2 id="hero-heading" className="mb-6 font-heading text-5xl leading-tight text-text md:text-7xl">
             {t('header.tagline')}
             <br />
             <span className="text-primary">{t('header.tagline_highlight')}</span>
           </h2>
-          <p className="mx-auto max-w-lg text-lg text-text/70">
+          <p className="mx-auto max-w-lg text-lg text-text/70 md:text-xl">
             {t('hero.description')}
           </p>
         </section>
@@ -107,32 +107,38 @@ export function Home() {
         {/* Recent Links */}
         {recentLinks.length > 0 ? (
           <section aria-labelledby="links-heading">
-            <h3 id="links-heading" className="mb-4 font-heading text-xl text-text">
+            <h3 id="links-heading" className="mb-6 font-heading text-2xl text-text text-center">
               {t('links.title')}
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {recentLinks.map((link) => (
                 <NeoCard key={link.code} className="space-y-4">
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                     <div className="min-w-0 flex-1">
-                      <p className="truncate font-heading text-lg text-primary">
+                      <p className="mb-1 truncate font-heading text-xl text-primary">
                         {link.shortUrl}
                       </p>
                       <p className="truncate text-sm text-text/60">
                         {link.originalUrl}
                       </p>
                     </div>
-                    <div className="flex shrink-0 gap-2">
+                    <div className="flex w-full shrink-0 gap-3 sm:w-auto">
                       <NeoButton
                         variant="accent"
                         onClick={() => void handleCopy(link.shortUrl, link.code)}
-                        className="px-3 py-2"
+                        className="flex-1 px-4 py-2 sm:flex-none"
                         aria-label={t('links.copy')}
                       >
                         {copiedId === link.code ? (
-                          <Check className="h-5 w-5" />
+                          <div className="flex items-center justify-center gap-2">
+                            <Check className="h-5 w-5" />
+                            <span className="sm:hidden">{t('links.copied')}</span>
+                          </div>
                         ) : (
-                          <Copy className="h-5 w-5" />
+                          <div className="flex items-center justify-center gap-2">
+                             <Copy className="h-5 w-5" />
+                             <span className="sm:hidden">{t('links.copy')}</span>
+                          </div>
                         )}
                       </NeoButton>
                       <a
@@ -140,13 +146,14 @@ export function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="
-                          inline-flex items-center justify-center
+                          inline-flex flex-1 items-center justify-center
                           border-3 border-text bg-secondary
-                          px-3 py-2
+                          px-4 py-2
                           shadow-neo
                           transition-all duration-100
                           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm
                           active:translate-x-[4px] active:translate-y-[4px] active:shadow-neo-none
+                          sm:flex-none
                         "
                         aria-label={t('links.open')}
                       >
@@ -156,7 +163,7 @@ export function Home() {
                   </div>
 
                   {/* QR Code */}
-                  <div className="flex items-end gap-4 border-t-3 border-text/10 pt-4">
+                  <div className="flex flex-col items-center gap-4 border-t-3 border-text/10 pt-6 sm:flex-row sm:items-end sm:justify-between">
                     <div className="border-3 border-text bg-white p-2 shadow-neo-sm">
                       <QRCode
                         id={`qr-${link.code}`}
@@ -168,7 +175,7 @@ export function Home() {
                     <NeoButton
                       variant="secondary"
                       onClick={() => { handleDownloadQR(link.code); }}
-                      className="px-3 py-2 text-xs"
+                      className="w-full px-4 py-2 text-xs sm:w-auto"
                     >
                       Download QR
                     </NeoButton>
@@ -180,19 +187,20 @@ export function Home() {
         ) : null}
 
         {/* Footer */}
-        <footer className="mt-16 border-t-3 border-text pt-6 text-center">
-          <p className="text-sm text-text/50">
+        <footer className="mt-20 border-t-3 border-text pt-8 text-center">
+          <p className="mb-4 text-sm text-text/50">
             {t('footer.built_with')}{' '}
             <span className="font-bold text-primary">{t('footer.design')}</span>{' '}
             · React · Firebase
           </p>
-          <div className="mt-2 flex justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#/privacy"
               className="text-sm underline text-text/50 hover:text-text transition-colors"
             >
               Privacy Policy
             </a>
+            <span className="hidden text-text/30 sm:inline">|</span>
             <PrivacySettingsButton />
           </div>
         </footer>

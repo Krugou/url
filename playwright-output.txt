@@ -1,0 +1,33 @@
+
+Running 4 tests using 4 workers
+
+[1A[2K[1/4] [chromium] ÔÇ║ e2e\home.spec.ts:29:3 ÔÇ║ NeoLink Home ÔÇ║ shows error for invalid URL
+[1A[2K[2/4] [chromium] ÔÇ║ e2e\home.spec.ts:12:3 ÔÇ║ NeoLink Home ÔÇ║ can shorten a valid URL
+[1A[2K[3/4] [chromium] ÔÇ║ e2e\home.spec.ts:8:3 ÔÇ║ NeoLink Home ÔÇ║ has title
+[1A[2K[4/4] [chromium] ÔÇ║ e2e\home.spec.ts:40:3 ÔÇ║ NeoLink Home ÔÇ║ can switch language to Finnish
+[1A[2K  1) [chromium] ÔÇ║ e2e\home.spec.ts:40:3 ÔÇ║ NeoLink Home ÔÇ║ can switch language to Finnish ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /FI/ })[22m
+
+
+      44 |
+      45 |     // Switch to FI
+    > 46 |     await page.getByRole('button', { name: /FI/ }).click();
+         |                                                    ^
+      47 |
+      48 |     // Check Finnish text
+      49 |     await expect(page.getByText('Lyhenn├ñ linkkisi.')).toBeVisible();
+        at C:\Users\moxch\Documents\GitHub\url\e2e\home.spec.ts:46:52
+
+    Error Context: test-results\home-NeoLink-Home-can-switch-language-to-Finnish-chromium\error-context.md
+
+
+[1A[2K  1 failed
+    [chromium] ÔÇ║ e2e\home.spec.ts:40:3 ÔÇ║ NeoLink Home ÔÇ║ can switch language to Finnish ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+  3 passed (31.5s)
+
+[36m  Serving HTML report at http://localhost:9323. Press Ctrl+C to quit.[39m

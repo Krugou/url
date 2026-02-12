@@ -1,0 +1,48 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "NeoLink" [ref=e6] [cursor=pointer]:
+        - /url: "#/"
+        - img [ref=e7]
+        - heading "NeoLink" [level=1] [ref=e10]
+      - button "Switch to Finnish" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+        - text: FI
+  - main [ref=e16]:
+    - region "Shorten Your Links. Brutally Fast." [ref=e17]:
+      - heading "Shorten Your Links. Brutally Fast." [level=2] [ref=e18]:
+        - text: Shorten Your Links.
+        - text: Brutally Fast.
+      - paragraph [ref=e19]: No fluff. No tracking cookies. Just short links that redirect at lightning speed.
+    - generic [ref=e21]:
+      - textbox [ref=e23]
+      - generic [ref=e24]:
+        - generic [ref=e25]: Paste your long URL
+        - textbox "Paste your long URL" [ref=e26]:
+          - /placeholder: https://example.com/some/very/long/path
+      - generic [ref=e27]:
+        - generic [ref=e28]: Custom alias (optional)
+        - generic [ref=e29]:
+          - generic [ref=e30]: /url/#/
+          - textbox "Custom alias (optional)" [ref=e31]:
+            - /placeholder: my-cool-link
+      - button "Shorten It!" [ref=e32] [cursor=pointer]
+    - generic [ref=e33]:
+      - paragraph [ref=e34]: Built with Neo-Brutalism · React · Firebase
+      - generic [ref=e35]:
+        - link "Privacy Policy" [ref=e36] [cursor=pointer]:
+          - /url: "#/privacy"
+        - button "Privacy Settings" [ref=e37] [cursor=pointer]
+  - generic [ref=e39]:
+    - generic [ref=e40]:
+      - img [ref=e41]
+      - heading "We track things." [level=3] [ref=e44]
+    - paragraph [ref=e45]: We use Google Analytics to see how many people click our weird links. It helps us fix bugs. We don't sell your data.
+    - generic [ref=e46]:
+      - button "Reject All" [ref=e47] [cursor=pointer]
+      - button "Accept Essential" [ref=e48] [cursor=pointer]
+      - button "Accept All" [ref=e49] [cursor=pointer]
+```

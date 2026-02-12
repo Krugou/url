@@ -26,7 +26,7 @@ function Layout() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-bg-main">
+    <div className="flex min-h-screen flex-col bg-bg-main">
       {/* Header */}
       <header className="border-b-3 border-text bg-accent py-4" role="banner">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4">
@@ -40,13 +40,15 @@ function Layout() {
         </div>
       </header>
 
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/:code" element={<Redirect />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      {/* Main Content - Centered with flex-grow */}
+      <div className="flex flex-grow flex-col items-center justify-center p-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/:code" element={<Redirect />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
 
       {/* Global components */}
       <ToastContainer />
