@@ -123,7 +123,7 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
   }
 
   return (
-    <NeoCard className="mx-auto mb-12 max-w-2xl">
+    <NeoCard className="mx-auto mb-16 max-w-2xl border-4 !shadow-[8px_8px_0_0_rgba(24,24,27,1)]">
       <form
         onSubmit={(e) => void handleSubmit(onSubmit)(e)}
         className="space-y-6"

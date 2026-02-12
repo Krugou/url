@@ -96,7 +96,7 @@ export function Home() {
             <br />
             <span className="text-primary">{t('header.tagline_highlight')}</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl font-medium text-text/80 md:text-2xl">
+          <p className="mx-auto max-w-2xl text-xl font-semibold leading-relaxed text-text/90 md:text-3xl">
             {t('hero.description')}
           </p>
         </section>
@@ -186,22 +186,26 @@ export function Home() {
           </section>
         ) : null}
 
-        {/* Footer */}
-        <footer className="mt-20 border-t-3 border-text pt-8 text-center">
-          <p className="mb-4 text-sm text-text/50">
-            {t('footer.built_with')}{' '}
-            <span className="font-bold text-primary">{t('footer.design')}</span>{' '}
-            · React · Firebase
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#/privacy"
-              className="text-sm underline text-text/50 hover:text-text transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <span className="hidden text-text/30 sm:inline">|</span>
-            <PrivacySettingsButton />
+        {/* Footer Redesign */}
+        <footer className="mt-32 w-full border-t-4 border-text pt-12 pb-24 text-center">
+          <div className="mx-auto max-w-2xl">
+            <p className="mb-6 text-base font-bold text-text/60">
+              {t('footer.built_with')}{' '}
+              <span className="text-primary underline decoration-text decoration-4 underline-offset-4">{t('footer.design')}</span>{' '}
+              · React · Firebase · Tailwind
+            </p>
+            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
+              <a
+                href="#/privacy"
+                className="group flex items-center gap-2 text-base font-black uppercase tracking-widest text-text"
+              >
+                <span className="border-b-3 border-transparent transition-all group-hover:border-primary">
+                  Privacy Policy
+                </span>
+              </a>
+              <div className="hidden h-5 w-1 bg-text/20 sm:block" />
+              <PrivacySettingsButton />
+            </div>
           </div>
         </footer>
       </main>
