@@ -7,6 +7,16 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   base: '/url/',
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'firebase-vendor': ['firebase/app', 'firebase/firestore', 'firebase/analytics'],
+          'ui-vendor': ['lucide-react', 'react-qr-code'],
+        },
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
