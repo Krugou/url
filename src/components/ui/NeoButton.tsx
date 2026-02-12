@@ -27,8 +27,8 @@ export function NeoButton({
       className={`
         inline-flex items-center justify-center gap-2
         px-6 py-3
-        font-heading text-base font-bold uppercase tracking-wide
-        border-3 border-text
+        font-heading text-base font-black uppercase tracking-widest
+        border-4 border-text
         shadow-neo
         transition-all duration-100 ease-in-out
         hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm

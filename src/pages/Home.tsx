@@ -88,15 +88,15 @@ export function Home() {
         <meta name="twitter:image" content="/url/og-image.png" />
       </Helmet>
 
-      <main className="w-full max-w-3xl space-y-16 py-12 md:py-24">
+      <main className="w-full max-w-4xl space-y-20 py-12 md:py-24">
         {/* Hero Section */}
         <section className="text-center" aria-labelledby="hero-heading">
-          <h2 id="hero-heading" className="mb-6 font-heading text-5xl leading-tight text-text md:text-7xl">
+          <h2 id="hero-heading" className="mb-8 font-heading text-6xl font-black leading-tight text-text md:text-8xl">
             {t('header.tagline')}
             <br />
             <span className="text-primary">{t('header.tagline_highlight')}</span>
           </h2>
-          <p className="mx-auto max-w-lg text-lg text-text/70 md:text-xl">
+          <p className="mx-auto max-w-2xl text-xl font-medium text-text/80 md:text-2xl">
             {t('hero.description')}
           </p>
         </section>

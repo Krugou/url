@@ -123,10 +123,10 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
   }
 
   return (
-    <NeoCard className="mb-8">
+    <NeoCard className="mx-auto mb-12 max-w-2xl">
       <form
         onSubmit={(e) => void handleSubmit(onSubmit)(e)}
-        className="space-y-4"
+        className="space-y-6"
         noValidate
       >
         {/* Honeypot — hidden from users, visible to bots */}
@@ -147,14 +147,15 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
           error={errors.url?.message}
           type="url"
           aria-label={t('form.label')}
+          className="text-lg"
           {...register('url')}
         />
 
         {/* Custom Alias (Optional) */}
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           <label
             htmlFor="custom-alias"
-            className="font-heading text-xs font-bold uppercase tracking-wide text-text/60"
+            className="font-heading text-sm font-black uppercase tracking-widest text-text"
           >
             Custom alias (optional)
           </label>
