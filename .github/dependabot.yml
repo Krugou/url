@@ -1,56 +1,44 @@
 version: 2
 
 updates:
-  # npm dependencies
-  - package-ecosystem: npm
-    directory: /
+  # ------------------------
+  # NPM dependencies
+  # ------------------------
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: weekly
-      day: monday
-      time: '09:00'
-      timezone: Europe/Helsinki
-    open-pull-requests-limit: 10
-    reviewers:
-      - Krugou
-    labels:
-      - dependencies
-      - npm
-    commit-message:
-      prefix: 'deps'
-      include: scope
-    groups:
-      # Group all production dependency updates together
-      production-dependencies:
-        dependency-type: production
-        update-types:
-          - minor
-          - patch
-      # Group all dev dependency updates together
-      dev-dependencies:
-        dependency-type: development
-        update-types:
-          - minor
-          - patch
-    # Ignore major version bumps for stability
-    ignore:
-      - dependency-name: '*'
-        update-types:
-          - version-update:semver-major
+      interval: 'daily'
+      time: '07:00'
+      timezone: 'UTC'
 
+    open-pull-requests-limit: 10
+
+    groups:
+      minor-and-patch:
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      major:
+        update-types:
+          - 'major'
+
+  # ------------------------
   # GitHub Actions
-  - package-ecosystem: github-actions
-    directory: /
+  # ------------------------
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: weekly
-      day: monday
-      time: '09:00'
-      timezone: Europe/Helsinki
-    open-pull-requests-limit: 5
-    reviewers:
-      - Krugou
-    labels:
-      - dependencies
-      - github-actions
-    commit-message:
-      prefix: 'ci'
-      include: scope
+      interval: 'daily'
+      time: '07:00'
+      timezone: 'UTC'
+
+    groups:
+      minor-and-patch:
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      major:
+        update-types:
+          - 'major'
