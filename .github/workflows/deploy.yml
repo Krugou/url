@@ -34,7 +34,7 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Lint
-        run: npx eslint .
+        run: npx oxlint
 
       - name: Run unit tests
         run: npx vitest run --reporter=verbose
@@ -78,7 +78,7 @@ jobs:
           echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| TypeScript | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
-          echo "| ESLint | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          echo "| Oxlint | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           echo "| Unit Tests | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           echo "| Build | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           echo "| Deploy | ${{ needs.deploy.result == 'success' && '✅ Live' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
