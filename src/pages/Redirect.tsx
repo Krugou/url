@@ -46,10 +46,7 @@ export function Redirect() {
       }
 
       try {
-        const q = query(
-          collection(db, 'short_links'),
-          where('id', '==', code),
-        );
+        const q = query(collection(db, 'short_links'), where('id', '==', code));
         const snapshot = await getDocs(q);
 
         if (snapshot.empty) {
@@ -93,10 +90,14 @@ export function Redirect() {
         <main className="flex min-h-screen items-center justify-center bg-bg-main p-4">
           <NeoCard className="max-w-md text-center">
             <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-primary" />
-            <h1 className="mb-2 font-heading text-2xl text-text">
+            <h1 className="mb-2 font-heading text-xl font-bold text-slate-900">
               {t('redirect.error_title')}
             </h1>
-            <p className="mb-6 text-text/70" role="alert" aria-live="polite">
+            <p
+              className="mb-6 text-sm text-slate-500 font-medium"
+              role="alert"
+              aria-live="polite"
+            >
               {error}
             </p>
             <NeoButton
@@ -120,8 +121,10 @@ export function Redirect() {
       </Helmet>
       <main className="flex min-h-screen items-center justify-center bg-bg-main">
         <div className="text-center" role="status" aria-live="polite">
-          <Loader2 className="mx-auto mb-4 h-12 w-12 animate-spin text-primary" />
-          <p className="font-heading text-xl text-text">{t('redirect.loading')}</p>
+          <Loader2 className="mx-auto mb-4 h-10 w-10 animate-spin text-primary" />
+          <p className="font-body text-base text-slate-500 font-semibold">
+            {t('redirect.loading')}
+          </p>
         </div>
       </main>
     </>

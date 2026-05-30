@@ -34,45 +34,43 @@ export function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full border-t-4 border-text bg-white p-6 shadow-[0_-8px_0_0_rgba(0,0,0,1)]">
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-6 md:flex-row">
-        <div className="space-y-1 text-center md:text-left">
-          <div className="flex items-center justify-center gap-3 md:justify-start">
-            <div className="bg-primary p-1.5 border-3 border-text shadow-neo-sm">
-              <ShieldCheck className="h-5 w-5 text-white" />
-            </div>
-            <h2 className="font-heading text-xl font-black uppercase tracking-tighter">
-              {t('consent.headline')}
-            </h2>
+    <div className="fixed bottom-6 right-6 left-6 md:left-auto md:max-w-md z-50 bg-white/95 backdrop-blur-md border border-slate-100 shadow-2xl p-6 rounded-2xl flex flex-col gap-4 animate-slide-in">
+      <div className="space-y-3">
+        <div className="flex items-center gap-3">
+          <div className="bg-primary/10 p-2.5 rounded-xl text-primary flex items-center justify-center">
+            <ShieldCheck className="h-5 w-5" />
           </div>
-          <p className="max-w-2xl text-sm font-medium leading-relaxed text-text/80">
-            {t('consent.body')}
-          </p>
+          <h2 className="font-heading text-lg font-bold text-slate-900 leading-tight">
+            {t('consent.headline')}
+          </h2>
         </div>
+        <p className="text-sm font-medium leading-relaxed text-slate-500">
+          {t('consent.body')}
+        </p>
+      </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-          <NeoButton
-            variant="secondary"
-            onClick={handleReject}
-            className="px-4 py-2 text-xs"
-          >
-            {t('consent.reject_all')}
-          </NeoButton>
-          <NeoButton
-            variant="accent"
-            onClick={handleAcceptEssential}
-            className="px-4 py-2 text-xs font-black"
-          >
-            {t('consent.accept_essential')}
-          </NeoButton>
-          <NeoButton
-            variant="primary"
-            onClick={handleAcceptAll}
-            className="px-6 py-2.5 text-sm font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)]"
-          >
-            {t('consent.accept_all')}
-          </NeoButton>
-        </div>
+      <div className="flex flex-col sm:flex-row gap-2.5 mt-2 justify-end">
+        <NeoButton
+          variant="secondary"
+          onClick={handleReject}
+          className="px-4 py-2.5 text-xs font-semibold flex-1 sm:flex-none"
+        >
+          {t('consent.reject_all')}
+        </NeoButton>
+        <NeoButton
+          variant="accent"
+          onClick={handleAcceptEssential}
+          className="px-4 py-2.5 text-xs font-semibold flex-1 sm:flex-none"
+        >
+          {t('consent.accept_essential')}
+        </NeoButton>
+        <NeoButton
+          variant="primary"
+          onClick={handleAcceptAll}
+          className="px-5 py-2.5 text-xs font-semibold flex-1 sm:flex-none"
+        >
+          {t('consent.accept_all')}
+        </NeoButton>
       </div>
     </div>
   );
@@ -95,7 +93,13 @@ export function PrivacySettingsButton() {
       >
         {t('footer.privacy_settings')}
       </button>
-      {showBanner ? <ReopenedBanner onClose={() => { setShowBanner(false); }} /> : null}
+      {showBanner ? (
+        <ReopenedBanner
+          onClose={() => {
+            setShowBanner(false);
+          }}
+        />
+      ) : null}
     </>
   );
 }
@@ -116,33 +120,39 @@ function ReopenedBanner({ onClose }: { onClose: () => void }) {
   const currentState = isConsentGranted() ? 'granted' : 'denied';
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full border-t-4 border-text bg-white p-6 shadow-[0_-8px_0_0_rgba(0,0,0,1)]">
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-6 md:flex-row">
-        <div className="space-y-1 text-center md:text-left">
-          <div className="flex items-center justify-center gap-3 md:justify-start">
-            <div className="bg-primary p-1.5 border-3 border-text shadow-neo-sm">
-              <ShieldCheck className="h-5 w-5 text-white" />
-            </div>
-            <h2 className="font-heading text-xl font-black uppercase tracking-tighter">
-              {t('consent.headline')}
-            </h2>
+    <div className="fixed bottom-6 right-6 left-6 md:left-auto md:max-w-md z-50 bg-white/95 backdrop-blur-md border border-slate-100 shadow-2xl p-6 rounded-2xl flex flex-col gap-4 animate-slide-in">
+      <div className="space-y-3">
+        <div className="flex items-center gap-3">
+          <div className="bg-primary/10 p-2.5 rounded-xl text-primary flex items-center justify-center">
+            <ShieldCheck className="h-5 w-5" />
           </div>
-          <p className="max-w-2xl text-sm font-medium leading-relaxed text-text/80">
-            {t('consent.body')}
-          </p>
-          <p className="text-xs font-black uppercase text-secondary">
-             Current status: Analytics {currentState}
-          </p>
+          <h2 className="font-heading text-lg font-bold text-slate-900 leading-tight">
+            {t('consent.headline')}
+          </h2>
         </div>
+        <p className="text-sm font-medium leading-relaxed text-slate-500">
+          {t('consent.body')}
+        </p>
+        <p className="text-xs font-semibold uppercase text-secondary tracking-wider">
+          Current status: Analytics {currentState}
+        </p>
+      </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-          <NeoButton variant="secondary" onClick={handleReject} className="px-4 py-2 text-xs">
-            {t('consent.reject_all')}
-          </NeoButton>
-          <NeoButton variant="primary" onClick={handleAccept} className="px-6 py-2.5 text-sm font-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
-            {t('consent.accept_all')}
-          </NeoButton>
-        </div>
+      <div className="flex gap-2.5 mt-2 justify-end">
+        <NeoButton
+          variant="secondary"
+          onClick={handleReject}
+          className="px-4 py-2.5 text-xs font-semibold flex-1"
+        >
+          {t('consent.reject_all')}
+        </NeoButton>
+        <NeoButton
+          variant="primary"
+          onClick={handleAccept}
+          className="px-5 py-2.5 text-xs font-semibold flex-1"
+        >
+          {t('consent.accept_all')}
+        </NeoButton>
       </div>
     </div>
   );

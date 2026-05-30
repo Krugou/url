@@ -9,9 +9,12 @@ interface NeoButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantStyles: Record<NeoButtonVariant, string> = {
-  primary: 'bg-primary text-white hover:bg-primary-hover',
-  secondary: 'bg-secondary text-text hover:bg-secondary-hover',
-  accent: 'bg-accent text-text hover:bg-accent-hover',
+  primary:
+    'bg-primary text-white hover:bg-primary-hover hover:shadow-indigo-500/25',
+  secondary:
+    'bg-secondary text-white hover:bg-secondary-hover hover:shadow-emerald-500/25',
+  accent:
+    'bg-accent text-white hover:bg-accent-hover hover:shadow-amber-500/25',
 };
 
 export function NeoButton({
@@ -27,14 +30,15 @@ export function NeoButton({
       className={`
         inline-flex items-center justify-center gap-2
         px-6 py-3
-        font-heading text-base font-black uppercase tracking-widest
-        border-4 border-text
-        shadow-neo
-        transition-all duration-100 ease-in-out
-        hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm
-        active:translate-x-[4px] active:translate-y-[4px] active:shadow-neo-none
+        font-heading text-base font-semibold tracking-wide
+        rounded-xl
+        border border-transparent
+        shadow-neo-sm
+        transition-all duration-200 ease-in-out
+        hover:-translate-y-0.5 hover:shadow-neo
+        active:translate-y-0 active:scale-[0.98]
         disabled:opacity-50 disabled:cursor-not-allowed
-        disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-neo
+        disabled:hover:translate-y-0 disabled:hover:shadow-neo-sm disabled:active:scale-100
         cursor-pointer
         ${variantStyles[variant]}
         ${className}
@@ -43,7 +47,7 @@ export function NeoButton({
       {...props}
     >
       {isLoading ? (
-        <span className="inline-block h-5 w-5 animate-spin rounded-full border-3 border-current border-t-transparent" />
+        <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
       ) : null}
       {children}
     </button>

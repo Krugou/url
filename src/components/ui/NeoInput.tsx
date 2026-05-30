@@ -14,7 +14,7 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         {label ? (
           <label
             htmlFor={inputId}
-            className="font-heading text-sm font-bold uppercase tracking-wide text-text"
+            className="font-body text-sm font-semibold tracking-wide text-slate-700"
           >
             {label}
           </label>
@@ -24,14 +24,15 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
           id={inputId}
           className={`
             w-full px-4 py-3
-            bg-bg-main text-text
-            border-3 border-text
+            bg-white text-slate-900
+            border border-slate-200
+            rounded-xl
             shadow-neo-sm
             font-body text-base
-            placeholder:text-text/40
-            focus:shadow-neo focus:outline-none
-            transition-shadow duration-100
-            ${error ? 'border-error' : ''}
+            placeholder:text-slate-400
+            focus:border-primary focus:ring-3 focus:ring-primary/10 focus:outline-none
+            transition-all duration-200
+            ${error ? 'border-error focus:border-error focus:ring-error/10' : ''}
             ${className}
           `}
           aria-invalid={error ? 'true' : undefined}
@@ -41,7 +42,7 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         {error ? (
           <p
             id={inputId ? `${inputId}-error` : undefined}
-            className="text-sm font-bold text-error"
+            className="text-sm font-medium text-error"
             role="alert"
             aria-live="polite"
           >

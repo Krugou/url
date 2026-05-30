@@ -9,10 +9,18 @@ import { CookieBanner } from './components/privacy/CookieBanner';
 import { trackPageView } from './hooks/useAnalytics';
 
 // Lazy load pages for better bundle distribution
-const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
-const Redirect = lazy(() => import('./pages/Redirect').then(module => ({ default: module.Redirect })));
-const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
-const Privacy = lazy(() => import('./pages/Privacy').then(module => ({ default: module.Privacy })));
+const Home = lazy(() =>
+  import('./pages/Home').then((module) => ({ default: module.Home })),
+);
+const Redirect = lazy(() =>
+  import('./pages/Redirect').then((module) => ({ default: module.Redirect })),
+);
+const NotFound = lazy(() =>
+  import('./pages/NotFound').then((module) => ({ default: module.NotFound })),
+);
+const Privacy = lazy(() =>
+  import('./pages/Privacy').then((module) => ({ default: module.Privacy })),
+);
 
 function PageViewTracker() {
   const location = useLocation();
@@ -30,11 +38,14 @@ function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-bg-main">
       {/* Header */}
-      <header className="border-b-3 border-text bg-accent py-4" role="banner">
+      <header
+        className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur-md border-b border-slate-100/80 py-4 shadow-sm shadow-slate-100/40"
+        role="banner"
+      >
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4">
-          <a href="#/" className="flex items-center gap-3 no-underline">
-            <Link2 className="h-10 w-10 text-text" strokeWidth={3.5} />
-            <h1 className="font-heading text-4xl font-black uppercase tracking-tighter text-text">
+          <a href="#/" className="flex items-center gap-2.5 no-underline">
+            <Link2 className="h-8 w-8 text-primary" strokeWidth={2.5} />
+            <h1 className="font-heading text-2xl font-extrabold tracking-tight text-slate-900">
               {t('header.title')}
             </h1>
           </a>
@@ -45,11 +56,13 @@ function Layout() {
       {/* Main Content - Wider and top-heavy */}
       <div className="flex flex-grow flex-col items-center p-4 pt-12 md:pt-24">
         <div className="w-full max-w-4xl">
-          <Suspense fallback={
-            <div className="flex items-center justify-center p-12">
-              <div className="h-12 w-12 animate-spin rounded-full border-4 border-text border-t-primary shadow-neo-sm"></div>
-            </div>
-          }>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center p-12">
+                <div className="h-10 w-10 animate-spin rounded-full border-3 border-slate-200 border-t-primary"></div>
+              </div>
+            }
+          >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/privacy" element={<Privacy />} />

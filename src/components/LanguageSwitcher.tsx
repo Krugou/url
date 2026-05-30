@@ -16,18 +16,18 @@ export function LanguageSwitcher() {
       onClick={handleSwitch}
       className="
         inline-flex items-center gap-2
-        border-3 border-text bg-accent
-        px-3 py-1.5
-        font-heading text-sm font-bold uppercase tracking-wider text-text
-        shadow-neo-sm
-        transition-all duration-100
-        hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-neo-none
-        active:translate-x-[2px] active:translate-y-[2px] active:shadow-neo-none
+        bg-slate-50 border border-slate-200/80
+        px-3.5 py-1.5
+        rounded-lg
+        font-body text-xs font-semibold tracking-wide text-slate-700
+        shadow-sm
+        transition-all duration-200
+        hover:bg-slate-100 active:scale-95
         cursor-pointer
       "
       aria-label={`Switch to ${nextLang === 'fi' ? 'Finnish' : 'English'}`}
     >
-      <Languages className="h-4 w-4" strokeWidth={3} />
+      <Languages className="h-4 w-4 text-slate-500" strokeWidth={2} />
       {t(`language.${nextLang}`)}
     </button>
   );

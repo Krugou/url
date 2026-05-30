@@ -3,8 +3,10 @@ import { createPortal } from 'react-dom';
 import { type Toast, type ToastVariant, listeners } from '../lib/toast';
 
 const variantStyles: Record<ToastVariant, string> = {
-  success: 'bg-secondary text-text',
-  error: 'bg-primary text-white',
+  success:
+    'bg-white border border-emerald-100 text-emerald-800 shadow-xl shadow-emerald-500/5',
+  error:
+    'bg-white border border-rose-100 text-rose-800 shadow-xl shadow-rose-500/5',
 };
 
 function ToastItem({
@@ -26,14 +28,20 @@ function ToastItem({
   return (
     <div
       className={`
-        border-3 border-text shadow-neo
-        px-5 py-3 font-heading text-sm font-bold uppercase tracking-wide
+        rounded-xl
+        px-5 py-3.5 font-body text-sm font-medium
         animate-slide-in
+        flex items-center gap-3
         ${variantStyles[toast.variant]}
       `}
       role="alert"
     >
-      {toast.message}
+      {toast.variant === 'success' ? (
+        <span className="flex h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
+      ) : (
+        <span className="flex h-2.5 w-2.5 shrink-0 rounded-full bg-rose-500 animate-pulse" />
+      )}
+      <span>{toast.message}</span>
     </div>
   );
 }

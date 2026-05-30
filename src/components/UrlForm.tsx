@@ -2,7 +2,14 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { collection, addDoc, getDocs, query, where, serverTimestamp } from 'firebase/firestore';
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  where,
+  serverTimestamp,
+} from 'firebase/firestore';
 import { nanoid } from 'nanoid';
 import { db } from '../lib/firebase';
 import { createUrlSchema, type UrlFormData } from '../schemas/url.schema';
@@ -76,9 +83,14 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
 
       if (customAlias.trim()) {
         // Custom alias — validate format and check availability
-        const alias = customAlias.trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
+        const alias = customAlias
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9-]/g, '');
         if (alias.length < 2 || alias.length > 20) {
-          setAliasError('Alias must be 2-20 characters (letters, numbers, hyphens)');
+          setAliasError(
+            'Alias must be 2-20 characters (letters, numbers, hyphens)',
+          );
           setIsLoading(false);
           return;
         }
@@ -123,7 +135,7 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
   }
 
   return (
-    <NeoCard className="mx-auto mb-16 max-w-2xl border-4 !shadow-[8px_8px_0_0_rgba(24,24,27,1)]">
+    <NeoCard className="mx-auto mb-16 max-w-2xl border border-slate-100 shadow-2xl shadow-indigo-500/5">
       <form
         onSubmit={(e) => void handleSubmit(onSubmit)(e)}
         className="space-y-6"
@@ -137,7 +149,9 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
             tabIndex={-1}
             autoComplete="off"
             value={honeypot}
-            onChange={(e) => { setHoneypot(e.target.value); }}
+            onChange={(e) => {
+              setHoneypot(e.target.value);
+            }}
           />
         </div>
 
@@ -155,12 +169,12 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
         <div className="flex flex-col gap-2">
           <label
             htmlFor="custom-alias"
-            className="font-heading text-sm font-black uppercase tracking-widest text-text"
+            className="font-body text-sm font-semibold tracking-wide text-slate-700"
           >
             Custom alias (optional)
           </label>
           <div className="flex items-center gap-2">
-            <span className="text-sm text-text/40 whitespace-nowrap">
+            <span className="text-sm text-slate-400 font-medium whitespace-nowrap">
               /url/#/
             </span>
             <input
@@ -168,22 +182,26 @@ export function UrlForm({ onLinkCreated }: UrlFormProps) {
               type="text"
               placeholder="my-cool-link"
               value={customAlias}
-              onChange={(e) => { setCustomAlias(e.target.value); }}
+              onChange={(e) => {
+                setCustomAlias(e.target.value);
+              }}
               maxLength={20}
               className="
-                w-full px-3 py-2
-                bg-bg-main text-text
-                border-3 border-text
-                shadow-neo-sm
+                w-full px-3.5 py-2
+                bg-white text-slate-900
+                border border-slate-200
+                rounded-lg
                 font-body text-sm
-                placeholder:text-text/30
-                focus:shadow-neo focus:outline-none
-                transition-shadow duration-100
+                placeholder:text-slate-400
+                focus:border-primary focus:ring-3 focus:ring-primary/10 focus:outline-none
+                transition-all duration-200
               "
             />
           </div>
           {aliasError ? (
-            <p className="text-xs font-bold text-error">{aliasError}</p>
+            <p className="text-xs font-medium text-error mt-0.5">
+              {aliasError}
+            </p>
           ) : null}
         </div>
 

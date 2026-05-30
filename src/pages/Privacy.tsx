@@ -22,9 +22,9 @@ export function Privacy() {
           {t('redirect.go_home')}
         </NeoButton>
 
-        <div className="mb-8 flex items-center gap-4">
-          <Shield className="h-10 w-10 text-secondary" strokeWidth={3} />
-          <h1 className="font-heading text-4xl text-text">
+        <div className="mb-8 flex items-center gap-3">
+          <Shield className="h-8 w-8 text-secondary" strokeWidth={2} />
+          <h1 className="font-heading text-3xl font-extrabold text-slate-900">
             {t('privacy.page_title')}
           </h1>
         </div>
@@ -79,7 +79,7 @@ export function Privacy() {
             </p>
             <a
               href={`mailto:${t('privacy.contact_email')}`}
-              className="font-heading text-primary underline"
+              className="font-body font-semibold text-primary hover:underline"
             >
               {t('privacy.contact_email')}
             </a>
