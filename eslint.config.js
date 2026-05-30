@@ -8,22 +8,32 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
   globalIgnores(['dist', '**/*.d.ts']),
+  // Base TypeScript configuration (applies to all code, including e2e specs)
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
       js.configs.recommended,
       tseslint.configs.strictTypeChecked,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
     ],
     languageOptions: {
       ecmaVersion: 2022,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  // React-specific configuration (applies only to the application source)
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    extends: [
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
     plugins: {
       react: reactPlugin,
     },
