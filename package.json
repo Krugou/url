@@ -26,8 +26,8 @@
     "react-hook-form": "^7.86.0",
     "react-i18next": "^17.0.12",
     "react-qr-code": "^2.2.0",
-    "react-router-dom": "^7.18.2",
-    "zod": "^4.4.3"
+    "react-router-dom": "^7.18.3",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
