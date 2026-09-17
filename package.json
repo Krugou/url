@@ -27,7 +27,7 @@
     "react-i18next": "^17.0.13",
     "react-qr-code": "^2.2.0",
     "react-router-dom": "^7.18.3",
-    "zod": "^4.6.2"
+    "zod": "^4.6.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
