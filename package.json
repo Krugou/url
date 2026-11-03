@@ -16,9 +16,9 @@
   "dependencies": {
     "@hookform/resolvers": "^6.0.2",
     "firebase": "^13.1.0",
-    "i18next": "^26.5.11",
-    "i18next-browser-languagedetector": "^8.2.3",
-    "lucide-react": "^1.65.0",
+    "i18next": "^26.5.12",
+    "i18next-browser-languagedetector": "^8.2.4",
+    "lucide-react": "^1.66.0",
     "nanoid": "^6.0.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
