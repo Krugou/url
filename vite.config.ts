@@ -10,9 +10,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'firebase-vendor': ['firebase/app', 'firebase/firestore', 'firebase/analytics'],
-          'ui-vendor': ['lucide-react', 'react-qr-code'],
+        manualChunks(id: string) {
+          if (/node_modules\/(@?firebase|@firebase)\//.test(id))
+            return 'firebase-vendor';
+          if (/node_modules\/(lucide-react|react-qr-code)\//.test(id))
+            return 'ui-vendor';
+          return undefined;
         },
       },
     },
